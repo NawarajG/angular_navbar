@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [],
+  template: `
+    <nav>
+      <a [routerLink]="'/'">Home</a>
+      <a [routerLink]="'/about'">About</a>
+      <a [routerLink]="'/contact'">Contact</a>
+    </nav>
+    <router-outlet></router-outlet>
+  `,
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'angular-tailwind-nav';
-}
+export class AppComponent {}
